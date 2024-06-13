@@ -1,18 +1,25 @@
 body {
-  padding: 40px;
-  padding-top: 0px;
+  margin: 0px;
 
+  padding-top: 0px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 :root {
-  --sub-branding-color: #6d6c6c;
+  --link-color: #6d6c6c;
+  --font-color: #757575;
+  --main-color: #1d1d1f;
 }
-.hero h1 {
-  padding-top: 200px;
-  margin: auto;
-  font-size: 150px;
-  text-align: center;
+.dark-color {
+  color: var(--main-color);
+}
+p {
+  font-size: 21px;
+  color: var(--font-color);
+  font-weight: 600;
+  letter-spacing: 0.011em;
+  position: relative;
+  z-index: 2;
 }
 .hero {
   background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/128/736/original/airpodmax_white.png?1718220153");
@@ -21,6 +28,13 @@ body {
   background-attachment: fixed;
   height: 100vh;
   background-repeat: no-repeat;
+}
+
+.hero h1 {
+  padding-top: 200px;
+  margin: auto;
+  font-size: 150px;
+  text-align: center;
 }
 
 .hero h4 {
@@ -32,16 +46,18 @@ body {
 .hero .links {
   display: flex;
   justify-content: flex-end;
-  position: relative;
-  top: -350px;
+  position: absolute;
+  top: 20%;
 }
 .hero a {
-  color: var(--sub-branding-color);
+  color: var(--link-color);
   text-decoration: none;
+  transition: all 200ms ease-in-out;
 }
 
 .hero a:hover {
-  color: red;
+  color: black;
+  text-shadow: 2px 2px 4px rgba(169, 169, 169, 0.5);
 }
 
 ul {
@@ -51,9 +67,136 @@ li {
   padding: 3px;
 }
 
+/* section 2's css*/
+h4 {
+  padding-top: 30px;
+}
+
+h2 {
+  font-size: 90px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.05em;
+}
+.design-section {
+  padding: 30px;
+}
+.design-section h2 {
+  max-width: 75%;
+  color: var(--main-color);
+  margin-bottom: 0px;
+}
+.reason-grid p {
+  color: var(--main-color);
+  margin-top: 0;
+  padding: 50px 80px 0px 0px;
+  font-weight: 500;
+}
+.design-section .reason-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.paragraph-style {
+  font-weight: 400;
+}
+
+.side-headphone-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+.side-headphone-container {
+  position: relative; /* positions it as ancestor position*/
+}
+.design-explanation {
+  position: relative;
+  z-index: 2;
+  width: 275px;
+}
+.design-explanation p {
+  font-size: 16px;
+}
+.design-explanation.first {
+  position: absolute;
+  top: 10%;
+  left: 12%;
+}
+.design-explanation.second {
+  position: absolute;
+  top: 30%;
+  left: 12%;
+}
+
+.design-explanation.third {
+  position: absolute;
+  top: 40%;
+  right: 12%;
+}
+
+.design-explanation.fourth {
+  position: absolute;
+  bottom: 0%;
+  right: 40%;
+}
+
 @media (max-width: 800px) {
+  .hero {
+    margin: 0px;
+    padding: 0px;
+  }
   .hero h1 {
-    font-size: 120px;
+    font-size: 80px;
     margin: auto;
+  }
+  .hero .links {
+    position: absolute;
+    top: 5%;
+  }
+  /*section 2*/
+  h2 {
+    font-size: 60px;
+  }
+  p {
+    font-size: 20px;
+  }
+  .design-section .reason-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .design-explanation {
+    z-index: initial;
+    width: 100px;
+  }
+  .side-headphone-img {
+    width: 100%; /* Set the desired width */
+    transform: scale(2);
+    position: relative; /* Ensure it's positioned relative to its container */
+    top: 150px; /* Adjust the distance from the top as needed */
+  }
+  .design-explanation p {
+    font-size: 12px;
+  }
+
+  .design-explanation.first {
+    position: absolute;
+    left: 5%;
+  }
+  .design-explanation.second {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+  }
+
+  .design-explanation.third {
+    position: absolute;
+    top: 60%;
+    right: 5%;
+  }
+
+  .design-explanation.fourth {
+    position: absolute;
+    bottom: 0%;
+    top: 100%;
   }
 }
