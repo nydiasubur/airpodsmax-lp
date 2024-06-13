@@ -140,6 +140,41 @@ h2 {
   right: 40%;
 }
 
+/*section 4 noise cancelling feature*/
+.reason3-section {
+  margin: 10px;
+}
+.reason3-section .grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-row-start: 1;
+  gap: 10px;
+}
+.grid-item-1 {
+  grid-row: span 2;
+}
+.grid-item-1 img {
+  max-width: 100%;
+
+  grid-row-start: 1;
+}
+.grid-item-2 img {
+  grid-column: 2; /* Places in the second column */
+  grid-row: 1; /* Places in the first row */
+  max-width: 100%;
+}
+.grid-item-3 {
+  grid-column: 2; /* Places in the second column */
+  grid-row: 2; /* Places in the second row */
+}
+.grid-item-1 img,
+.grid-item-2 img {
+  width: 100%; /* Ensure images fill their containers */
+  height: auto;
+}
+
+/**/
 @media (max-width: 800px) {
   .hero {
     margin: 0px;
