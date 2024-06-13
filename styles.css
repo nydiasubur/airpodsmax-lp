@@ -13,6 +13,9 @@ body {
 .dark-color {
   color: var(--main-color);
 }
+.description-paragraph-style {
+  font-weight: 500;
+}
 p {
   font-size: 21px;
   color: var(--font-color);
@@ -142,7 +145,7 @@ h2 {
 
 /*section 4 noise cancelling feature*/
 .reason3-section {
-  margin: 10px;
+  margin: 15px;
 }
 .reason3-section .grid-container {
   display: grid;
@@ -174,7 +177,25 @@ h2 {
   height: auto;
 }
 
-/**/
+/* section reason 4*/
+.reason4-section {
+  margin: 15px;
+}
+.grid-container-1row-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.item-2 {
+  padding: 50px;
+  margin-top: 30px;
+}
+
+.item-1 img {
+  max-width: 100%;
+}
+
+/*MEDIA FOR RESPONSIVENESSSS ON SMALL MOBILE*/
 @media (max-width: 800px) {
   .hero {
     margin: 0px;
@@ -233,5 +254,39 @@ h2 {
     position: absolute;
     bottom: 0%;
     top: 100%;
+  }
+
+  /**section for reason 3*/
+  .reason3-section {
+    margin-top: 300px;
+  }
+  .reason3-section .grid-container {
+    grid-template-columns: 1fr; /* Single column */
+    grid-template-rows: auto auto auto; /* Three rows */
+  }
+  .grid-item-1 {
+    grid-row: 1;
+  }
+  .grid-item-1 img {
+    max-width: 100%;
+    /* Ensure it starts at the first row */
+  }
+  .grid-item-3 {
+    grid-row: 2;
+  }
+  .grid-item-2 {
+    grid-row: 3;
+  }
+  .grid-item-2 img {
+    max-width: 100%;
+  }
+
+  /* section reason 4*/
+  .grid-container-1row-2col {
+    grid-template-columns: 1fr;
+  }
+  .item-2 {
+    margin: 0px;
+    padding: 5px;
   }
 }
