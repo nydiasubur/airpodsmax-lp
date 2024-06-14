@@ -262,6 +262,26 @@ h2 {
   max-width: 100%;
   height: fit-content;
 }
+
+/**ANIMATIONNN w**/
+h2,
+p {
+  animation: CSSScrollReveal ease-in-out both;
+  animation-timeline: view();
+  animation-range: entry 50% cover 50%;
+}
+
+@keyframes CSSScrollReveal {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /**footer css**/
 
 footer {
@@ -320,7 +340,7 @@ footer a {
   }
   .design-explanation.second {
     position: absolute;
-    top: 50%;
+    top: 57%;
     left: 5%;
   }
 
@@ -335,38 +355,42 @@ footer a {
     bottom: 0%;
     top: 100%;
   }
+  .design-explanation.fourth p {
+    color: rgb(80, 79, 79);
+  }
 
   /**section for reason 3*/
-  .reason3-section {
+  .reason2-section {
     margin-top: 300px;
   }
   .reason3-section .grid-container {
-    grid-template-columns: 1fr; /* Single column */
-    grid-template-rows: auto auto auto; /* Three rows */
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
   }
   .grid-item-1 {
+    grid-row: span 2; /* Ensure grid-item-1 spans two rows */
+    max-width: 100%;
+    grid-column: 2; /* Ensure item is in the second (and only) column */
     grid-row: 1;
   }
-  .grid-item-1 img {
+
+  .grid-item-2 {
+    grid-column: 2;
+    display: block;
+    margin: auto;
     max-width: 100%;
-    /* Ensure it starts at the first row */
   }
   .grid-item-3 {
     grid-row: 2;
   }
-  .grid-item-2 {
-    grid-row: 3;
-  }
-  .grid-item-2 img {
-    max-width: 100%;
-  }
 
   /* section reason 4*/
-  .grid-container-1row-2col {
+  .grid-container-reason4 {
     grid-template-columns: 1fr;
+    grid-template-rows: auto;
   }
   .item-2 {
-    margin: 0px;
-    padding: 5px;
+    margin-top: 0px;
+    padding-top: 10px;
   }
 }
