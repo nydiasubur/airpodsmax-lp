@@ -176,6 +176,8 @@ h2 {
 .circle {
   width: 40px;
   height: 40px;
+  min-width: 20px; /* Set a minimum width */
+  min-height: 20px; /* Set a minimum height */
   border-radius: 50%;
   cursor: pointer;
   margin: 10px;
@@ -442,8 +444,38 @@ footer a {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
   }
+
+  .grid-container-reason4 .item-1,
+  .grid-container-reason4 .item-2 {
+    flex: 1; /* Flex items will share space equally */
+  }
   .item-2 {
     margin-top: 0px;
     padding-top: 10px;
+  }
+}
+@media (max-width: 600px) {
+  .circle {
+    width: 30px;
+    height: 30px;
+  }
+  .design-explanation p {
+    font-size: 10px;
+  }
+
+  .design-explanation.first {
+    position: absolute;
+    top: 10%;
+    left: 3%;
+  }
+  .design-explanation.second {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+  }
+  .design-explanation.fourth {
+    position: absolute;
+    bottom: 1%;
+    left: 35%;
   }
 }
