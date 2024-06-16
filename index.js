@@ -29,34 +29,41 @@ const debounce = (func, delay) => {
 };
 
 // Select elements to animate
-const elementsToAnimate = document.querySelectorAll(
-  "h2, p, h4, .design-explanation p, h1, .hero h4"
-);
 
-console.log("Elements to animate:", elementsToAnimate);
-
-// Configure the Intersection Observer
+//animation for y axis
 const observer = new IntersectionObserver(
-  (entries, observer) => {
+  (entries) => {
     entries.forEach((entry) => {
-      console.log("Intersection entry:", entry);
-
+      console.log(entry);
       if (entry.isIntersecting) {
-        // Add a class to trigger the animation when element is in view
-        console.log("Element is intersecting:", entry.target);
-        entry.target.classList.add("animate-in");
+        entry.target.classList.add("animate-in-y");
       } else {
-        // Optionally, remove the class when element is not in view
-        console.log("Element is not intersecting:", entry.target);
-        entry.target.classList.remove("animate-in");
+        entry.target.classList.remove("animate-in-y"); // Delay to match the animation duration
       }
     });
   },
-  { threshold: 0 }
-); // Adjust threshold as needed
+  { threshold: 0.1 }
+);
 
-// Observe each element
-elementsToAnimate.forEach((element) => {
-  console.log("Observing element:", element);
-  observer.observe(element);
-});
+const elementsToAnimate = document.querySelectorAll("h2, p, h4");
+elementsToAnimate.forEach((element) => observer.observe(element));
+
+//animation to add fade in and out
+const observerFade = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      console.log(entry);
+      if (entry.isIntersecting) {
+        entry.target.classList.add("fade-in-out");
+      } else {
+        entry.target.classList.remove("fade-in-out"); // Delay to match the animation duration
+      }
+    });
+  },
+  { threshold: 0.1 }
+);
+
+const elementsToAnimateFade = document.querySelectorAll("h1, .hero h4, img");
+elementsToAnimateFade.forEach((element) => observerFade.observe(element));
+
+//animation to fade
